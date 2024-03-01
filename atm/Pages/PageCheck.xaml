@@ -1,0 +1,34 @@
+﻿<Page x:Class="atm.Pages.PageCheck"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:atm.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageCheck">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBox Name="txtBox" TextChanged="txtBox_TextChanged"
+                     PreviewTextInput="txtBox_PreviewTextInput">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <Button Content="Ввод" Style="{StaticResource btnSubmit}" Click="Button_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="7"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <TextBlock Text="ПИН-код неверный! Попробуйте еще раз." Visibility="Hidden"
+                       Name="tbWarning" TextAlignment="Center"/>
+            <TextBlock Text="Пожалуйста, введите ПИН-код" Visibility="Hidden" Name="tbNoText"
+                       TextAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Page>
